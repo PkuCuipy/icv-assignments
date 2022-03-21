@@ -4,4 +4,4 @@
 
 ### Course projects of *Introduction to Computer Vision*, Peking University, 2022 Spring.
 - Codes and report will be updated once the assignment is due. ~~(if I do not quit in the midterm, I mean)~~
-- Hyperlinks in PDF file could not be clicked in Github preview page, so you may want to download it before happily access them.
+- Hyperlinks in PDF file could not be clicked in Github preview page, so you may want to download it before happily accessing them.
