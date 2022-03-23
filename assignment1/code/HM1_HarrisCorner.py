@@ -1,6 +1,6 @@
 import numpy as np
 from utils import read_img, draw_corner
-from HM1_Convolve import Gaussian_filter, Sobel_filter_x, Sobel_filter_y
+from HM1_Convolve import Gaussian_filter, Sobel_filter_x, Sobel_filter_y, padding, convolve
 from PIL import Image
 
 def corner_response_function(I_xx, I_yy, I_xy, window_size, alpha, threshold):
@@ -21,12 +21,24 @@ def corner_response_function(I_xx, I_yy, I_xy, window_size, alpha, threshold):
     # and keep windows with theta > threshold.
     # for detials of corner_response_function, please refer to the slides.
 
+    assert window_size % 2 == 1, f"`window_size` should be an odd integer, got {window_size} instead."
+    pad = window_size // 2
+
+    # 利用 box filter 实现 ΣIxx, ΣIyy, ΣIxIy 的计算
+    kernel = np.ones([window_size, window_size])
+    I_xx = convolve(padding(I_xx, pad, "replicatePadding"), kernel)
+    I_yy = convolve(padding(I_yy, pad, "replicatePadding"), kernel)
+    I_xy = convolve(padding(I_xy, pad, "replicatePadding"), kernel)
+
+    # 计算 corner response function
     Theta = I_xx * I_yy - I_xy**2 - alpha * (I_xx + I_yy)**2
 
+    # 筛选出 response > threshold 的点
     index_of_rows, index_of_cols = np.where(Theta > threshold)
+
+    # 根据约定的数据结构构造返回值
     theta = Theta[index_of_rows, index_of_cols]
     corner_list = list(zip(index_of_rows, index_of_cols, theta))
-
     return corner_list  # the corners in corner_list: a tuple of (index of rows, index of cols, theta)
 
 
@@ -49,7 +61,7 @@ if __name__ == "__main__":
     # you can adjust the parameters to fit your own implementation
     window_size = 5
     alpha = 0.04
-    threshold = 0.01
+    threshold = 10.
 
     corner_list = corner_response_function(I_xx, I_yy, I_xy, window_size, alpha, threshold)
 
