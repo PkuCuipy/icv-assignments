@@ -18,7 +18,7 @@
 ### Assignment 1
 1. Convolution by sliding window & by Toeplitz matrix (for-loops are banned for Numpy practice);
 2. Canny Edge Detector;
-3. Harris Edge Detector;
+3. Harris Corner Detector;
 4. RANSAC algorithm for plane-fitting;
 5. Implement backpropagation for multi-layer perceptron (MLP).
 
@@ -32,4 +32,4 @@
 ### Assignment 2
 1. Implement BatchNorm layer for MLP, including train-time forward, test-time forward and backpropagation;
 2. Build and train a CNN on CIFAR-10, and further improve it by tricks like tunning and data augmentation;
-3. Camera calibration, solve the intrinsic K and extrinsic \[R, T\] of a perspective camera;
+3. Camera calibration, solving the intrinsic matrix K and extrinsic matrix \[R, T\] of a perspective camera;
