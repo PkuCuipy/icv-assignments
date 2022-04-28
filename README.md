@@ -26,10 +26,10 @@
 
 ### 作业 2
 1. 实现 MLP 的 BatchNorm 层, 包括训练前向、测试前向和反向传播;
-2. 在 CIFAR-10 数据集上训练一个卷积神经网络;
+2. 在 CIFAR-10 数据集上搭建一个卷积神经网络, 并通过调参、数据增加等技巧提高网络性能;
 3. 透视投影相机的矫正.
 
 ### Assignment 2
 1. Implement BatchNorm layer for MLP, including train-time forward, test-time forward and backpropagation;
-2. Train a CNN on CIFAR-10 datasets;
+2. Build and train a CNN on CIFAR-10, and further improve it by tricks like tunning and data augmentation;
 3. Camera calibration, solve the intrinsic K and extrinsic \[R, T\] of a perspective camera;
