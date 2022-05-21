@@ -33,3 +33,20 @@
 1. Implement BatchNorm layer for MLP, including train-time forward, test-time forward and backpropagation;
 2. Build and train a CNN on CIFAR-10, and further improve it by tricks like tunning and data augmentation;
 3. Camera calibration, solving the intrinsic matrix K and extrinsic matrix \[R, T\] of a perspective camera;
+
+
+---
+
+### 作业 3
+1. 将一个透视投影的深度图转换为点云表示;
+2. 使用两种方法 (均匀采样 & 远距离点采样) 在三角网面上进行采样 (构成点云); 使用 ｢推土机距离｣ 和 ｢Chamfer 距离｣ 衡量点云之间的距离;
+3. 实现一种将隐式模型表示转换为三角网面表示的算法——Marching Cube 算法;
+4. 实现一个经典的、可处理 3D 点云的深度学习模型——PointNet;
+5. 应用 Mask RCNN 算法在自己定义的一个数据集上, 并使用 mAP 对模型效果进行评价;
+
+### Assignment 3
+1. Transform a depth image to a point cloud;
+2. Implement Uniform-sampling & Furthest-point-sampling Algorithm for sampling on mesh; Use EMD & CD to measure distance between point clouds;
+3. Implement marching-cube algorithm, which can transform the implicit representation of a 3D-model to mesh representation;
+4. Implement the classic deeplearning model for 3D point-cloud learning: PointNet;
+5. Finetune a Mask RCNN model to fit a dataset created by yourself and then use mAP to evaluate the performance of that model on your dataset;
